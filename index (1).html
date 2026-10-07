@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ahmed Alzaabi | Robotics & AI</title>
+<meta name="description" content="Ahmed Alzaabi, PhD researcher in robotics at Khalifa University, working on AI and robotics for real-world problems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #eef2f1;
+    --ink: #10303e;
+    --muted: #4d6670;
+    --line: #c9d5d6;
+    --deep: #0f2b3a;
+    --sand: #b08a45;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #0f2129; --ink: #e3ecee; --muted: #9db2b8; --line: #27414c; --sand: #d2b077; }
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Spectral", Georgia, "Times New Roman", serif;
+    font-size: 1.125rem; line-height: 1.65;
+  }
+  main, footer { max-width: 54rem; margin: 0 auto; padding: 0 1.5rem; }
+  h1, h2, h3 { font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; line-height: 1.1; letter-spacing: -0.01em; }
+  h1 { font-size: clamp(2.8rem, 8vw, 5rem); font-stretch: 75%; font-weight: 800; margin: 0 0 1rem; }
+  h2 { font-size: 1.6rem; font-stretch: 85%; font-weight: 700; margin: 0 0 1.5rem; }
+  h3 { font-size: 1.2rem; font-stretch: 90%; font-weight: 700; margin: 0 0 .35rem; }
+  p { margin: 0 0 1rem; max-width: 40rem; }
+  a { color: inherit; text-decoration-color: var(--sand); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 3px; }
+  a:focus-visible { outline: 2px solid var(--sand); outline-offset: 3px; border-radius: 2px; }
+
+  /* hero */
+  .hero {
+    min-height: 82vh; display: grid; grid-template-columns: 1fr 15rem; gap: 3rem;
+    align-items: center; padding: 4rem 0 3rem;
+  }
+  .lede { font-size: 1.35rem; line-height: 1.5; }
+  .meta { color: var(--muted); font-size: 1rem; }
+  .portrait {
+    width: 15rem; aspect-ratio: 4 / 5; border-radius: 10rem 10rem 1rem 1rem;
+    overflow: hidden; background: var(--deep); position: relative;
+  }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .portrait .initials {
+    position: absolute; inset: 0; display: grid; place-items: center;
+    font-family: "Archivo", sans-serif; font-stretch: 75%; font-weight: 800; font-size: 4rem; color: var(--sand);
+  }
+
+  section { padding: 3.5rem 0 1rem; border-top: 1px solid var(--line); }
+
+  /* interests */
+  .interests { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .interests p { font-size: 1rem; color: var(--muted); }
+
+  /* projects */
+  .project { display: grid; grid-template-columns: 6rem 1fr; gap: 1.5rem; padding: 1.5rem 0; border-top: 1px solid var(--line); }
+  .project:first-of-type { border-top: 0; padding-top: 0; }
+  .project .when { font-family: "Archivo", sans-serif; font-stretch: 85%; color: var(--muted); font-size: .95rem; padding-top: .15rem; }
+  .project p { margin-bottom: .5rem; }
+  .project .tags { font-size: .95rem; color: var(--muted); }
+
+  dl.cv { display: grid; grid-template-columns: 8rem 1fr; gap: .4rem 1.5rem; margin: 0; }
+  dl.cv dt { color: var(--muted); font-size: 1rem; padding-top: .1rem; }
+  dl.cv dd { margin: 0 0 .8rem; }
+
+  ul.links { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.75rem; }
+  footer { padding-top: 3rem; padding-bottom: 3rem; font-size: .9rem; color: var(--muted); }
+
+  @media (max-width: 46rem) {
+    .hero { grid-template-columns: 1fr; gap: 2rem; min-height: auto; padding-top: 3rem; }
+    .portrait { width: 11rem; order: -1; }
+    .interests { grid-template-columns: 1fr; gap: 1rem; }
+    .project { grid-template-columns: 1fr; gap: .25rem; }
+    dl.cv { grid-template-columns: 1fr; }
+    dl.cv dd { margin-bottom: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div>
+      <h1>Ahmed Alzaabi</h1>
+      <p class="lede">PhD researcher in robotics at Khalifa University. I build AI systems that help robots and sensors make sense of the real world, from the seabed to satellite images.</p>
+      <p class="meta">Abu Dhabi, United Arab Emirates</p>
+    </div>
+    <div class="portrait">
+      <span class="initials" aria-hidden="true">AA</span>
+      <img src="photo.jpg" alt="Portrait of Ahmed Alzaabi" onerror="this.remove()">
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I work at the meeting point of robotics, computer vision and machine learning, with a focus on systems that have to work outside the lab: with little data, limited hardware and real consequences when they get things wrong.</p>
+    <p>I am a member of the robotics group of Prof. Jorge Dias at Khalifa University, co-supervised by Dr. Federico Renda. Before my PhD, I studied mechatronics and artificial intelligence at the University of Sheffield.</p>
+  </section>
+
+  <section id="interests">
+    <h2>Research interests</h2>
+    <div class="interests">
+      <div>
+        <h3>Robot perception</h3>
+        <p>Computer vision that runs on robots and embedded hardware, and knows when to say "I'm not sure".</p>
+      </div>
+      <div>
+        <h3>AI with little data</h3>
+        <p>Models that generalise from a handful of examples, and honest ways to test whether they really do.</p>
+      </div>
+      <div>
+        <h3>Autonomous systems</h3>
+        <p>Robots that decide what is worth reporting, when bandwidth, power and time are all limited.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <article class="project">
+      <div class="when">2026</div>
+      <div>
+        <h3>Endangered ray detector</h3>
+        <p>An AI pipeline that finds the Endangered coach whipray in underwater photos, rejects look-alike animals, and names the species only when confident. Built from a few hundred public images, without training a large model.</p>
+        <p class="tags">Computer vision, few-shot learning, conservation</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="when">2026</div>
+      <div>
+        <h3>Semantic compression for underwater robots</h3>
+        <p>My PhD project: instead of streaming video over slow acoustic links, the robot recognises what it sees and sends short, structured reports, with a metric for how faithfully those reports match reality.</p>
+        <p class="tags">Robotics, edge AI, communication</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="when">2026</div>
+      <div>
+        <h3>Diversity over density in fish identification</h3>
+        <p>A study of why species-recognition models fail on new footage, showing that the number of distinct recordings matters more than the number of training images.</p>
+        <p class="tags">Machine learning, evaluation</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="when">2026</div>
+      <div>
+        <h3>Satellite monitoring of climate disasters</h3>
+        <p>Team lead in the UAE Space Agency Space Academy hackathon, working on early detection and impact assessment of floods, droughts, dust storms and wildfires from satellite time series.</p>
+        <p class="tags">Remote sensing, deep learning, team lead</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="when">2026</div>
+      <div>
+        <h3>Mixed-reality coral reef monitoring</h3>
+        <p>A lab project combining underwater simulation and a Meta Quest 3 headset to explore and assess coral reef health in mixed reality.</p>
+        <p class="tags">Mixed reality, simulation, marine science</p>
+      </div>
+    </article>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <dl class="cv">
+      <dt>2026–present</dt>
+      <dd>PhD in Robotics<br><span class="meta">Khalifa University, Abu Dhabi</span></dd>
+      <dt>MSc</dt>
+      <dd>Artificial Intelligence<br><span class="meta">University of Sheffield, UK</span></dd>
+      <dt>BEng</dt>
+      <dd>Mechatronics and Robotics<br><span class="meta">University of Sheffield, UK</span></dd>
+    </dl>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>I am always happy to talk about robotics, AI and research collaborations.</p>
+    <ul class="links">
+      <li><a href="mailto:ahmdalzaabi@hotmail.com">ahmdalzaabi@hotmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/ahmed-mohamed-alzaabi-675944269/">LinkedIn</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; <span id="year">2026</span> Ahmed Alzaabi</p>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
